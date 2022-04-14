@@ -1,0 +1,32 @@
+
+Problem:
+Dads and Grads
+A joint Father’s Day and graduation party is being thrown for Michael, Ken, James, Alberto, Elias, and Stephanie. Three of them are newly minted high school graduates. The other three are their dads.
+Stephanie went to the senior prom with Michael’s son.
+Elias and James played on the school’s baseball team. One of them is Alberto’s son.
+Michael and Elias are not related.
+Can you match the high school graduates to their fathers at this joint celebration?
+
+
+Answer:
+To solve this problem I first separated the graduates from their dads. I did this through a process of elimination. The first sentence states that Stephanie went to senior prom with Michael's son - we now know that Stephanie is a grad and Michael is a dad. It also states that Elias and James played on the school's baseball team and one of them is Alberto's son. We know now that Alberto is a Dad and that either Elias and James is his son so those are the two graduates. Ken was the only person left so he has to be a dad. 
+
+Grad                             Dad
+________________________________________
+
+Stephanie 			Michael
+Elias				Alberto
+James				Ken
+
+
+I then matched the grads to the dads. Stephanie can't be Michaels grad because Stephanie went to prom with Michael's son. This leaves Elias or James. The last sentence states that Michael and 
+Elias are not related this leaves James as Michael's son. This also eliminates James from being Alberto son in the second sentence so Elias has to be Alberto's son. Leaving Ken and Stephanie.
+
+
+Matches
+Grad				Dad
+________________________________________
+James 				Michael
+Elias				Alberto
+Stephanie			Ken
+
