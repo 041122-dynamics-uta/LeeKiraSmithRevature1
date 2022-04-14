@@ -1,0 +1,21 @@
+
+Problem:
+Five friends (Allegra, Ben, Clara, Flora, and Zach) are each allergic to something different: pollen, shellfish, bee stings, cats, or nuts.
+Allegra has a food allergy
+Ben can play with his kitten for hours without issue (or medicine).
+Clara’s allergy is not related to animals.
+Flora has seasonal allergies.
+Can you figure out who is allergic to what?
+
+Answer:
+The way I approached this problem was I first created a chart with the allergies listed on the x-axis and the friends name on the y-axis.
+
+		Pollen		Shellfish	Bee Sting	Cats	   Nuts
+
+Allegra		  x	            1		    x		  x          x
+Ben		  x		    x		    1		  x	     x		
+Clara             x                 x               x             x          1  
+Flora		  1                 x               x             x          x
+Zach		  x                 x               x             1          x   
+
+The first sentence states that Allegra has a food allergy that leaves only two options shellfish and nuts. The next sentence states that Ben can play with his kitten for hours without issues or medicine so we know Ben isn't allergic to Cats. Clara's allergy is not animal related so that eliminates shellfish, bee stings, and cats leaving clara's only choices as pollen and nuts. Flora's allergy is seasonal and the only seasonal allergy is Pollen. This also leaves Clara with a nut allergy and Allegra with a shellfish allergy. We know Ben isn't allergic to cats so that leaves him allergic to bee sting. Leaving Zach allergic to cats. 
