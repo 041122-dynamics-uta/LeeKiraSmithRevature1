@@ -1,0 +1,26 @@
+Problem: Good Life
+
+Each of five neighborhood dogs (Saber, Ginger, Nutmeg, Pepper, and Bear) is enjoying one of the following 
+activities: getting its ears scratched, playing catch, taking a nap, burying a chew toy, and going for a walk.
+
+Pepper is either playing catch or burying a chew toy.
+Neither Ginger nor Saber nor Bear is on a walk.
+One of the dogs named after a spice is getting its ears scratched.
+A dog not named for a spice is playing catch.
+Bear is getting some exercise.
+Can you figure out what each pooch is doing?
+
+
+
+Answer: To solve this logic problem I first created a chart. On the y-axis I listed out each pet name and on the x-axis I listed each activity. It looked similar to this
+
+         Ears Scratched   Playing Catch   Napping    Burying a Chew Toy    Walk
+
+Saber          x               x             1               x               x
+Ginger         1               x             x               x               x
+Nutmeg         x               x             x               x               1
+Pepper         x               x             x               1               x      
+Bear           x               1             x               x               x
+
+
+The first fact is Pepper is either playing catch or burying a chew toy. That elimnates Pepper from getting ears scratched, napping, and walking. Ginger, Saber, and Bear are not on a walk. The only dog that can be on a walk is Nutmeg. It also states that a dog not named for a spice is playing catch, so Pepper and Ginger can't be playing catch. This means Pepper is burying a chew toy. That leaves napping, ear scratching, playing catch. Bear is getting some exercise so Bear can't be getting ears scratched or napping so that means Bear is playing catch. This leaves Ginger and Saber. It states that one of the dogs named after a spice is getting its ears scratched and Ginger is the only dog remaining that is named after a spice so Saber has to be napping since it is the only activity remaining.
