@@ -1,0 +1,24 @@
+Problem: Summer Camp
+
+Abigail, Oliver, Rosa, and Blake all attend the same summer camp, where they can cook, kayak, rock climb, and zip-line. Each child has a different favorite activity.
+Abigail’s favorite activity isn’t rock climbing.
+Oliver is afraid of heights.
+Rosa can’t do her favorite activity without a harness.
+Blake likes to keep his feet on the ground at all times.
+Can you figure out who likes what?
+
+Answer: To solve this logic problem I first created a chart. On the y-axis I listed out each camp memebers name and on the x-axis I listed each activity. It looked similar to this
+  
+         Cook    Kayak    Rock Climb    Zip-line
+
+Abigail   x        x          x            1 
+Oliver    x        1          x            x 
+Rosa      x        x          1            x
+Blake     1        x          x            x 
+
+
+Blake likes to keep his feet on the ground at all times so that eliminates zip-lining, rock climbing, and kayaking. That leaves cooking as the activity that Blake likes.
+Abigail doesn't like to rock climb so that leaves kayaking and zip-lining.
+Oliver is afraid of heights so that eliminates rock climbing and zip-lining. Blake likes cooking so that leaves kayaking. Oliver likes kayaking.
+Abigail is now left with one choice which is zip-lining. Leaving Rosa with the only activity left, rock climbing which is possible because she can't do her favorite activity without a harness
+
