@@ -1,0 +1,26 @@
+President Day
+
+Problem: President Day
+
+Presidents Day:
+George, William, John, Abe, and Millard have their birthdays on consecutive days, all between Monday and Friday.
+George’s birthday is as many days before Millard’s and William’s is after Abe’s.
+John is two days older than Abe.
+Millard’s birthday is on Thursday.
+Can you figure out whose birthday is on each day?
+
+
+
+
+Answer: To solve this logic problem I first created a chart. On the y-axis I listed out each president name and on the x-axis I listed each week day. It looked similar to this
+
+            Monday            Tueday         Wednesday       Thursday        Friday
+
+George        x                 1                x             x              x   
+William       x                 x                x             x              1    
+John          1                 x                x             x              x  
+Abe           x                 x                1             x              x 
+Millard       x                 x                x             1              x   
+
+
+Millard's birthday is on Thursday. Thursday is now eliminated off our chart. Abe's birthday can't be on a Friday because William's birthday is after Abe's. That leaves the choices Monday,Tuesday, and Wednesday for Abe's birthday. We also know that John is two days older than Abe so Abe's birthday can't be on a monday or Tuesday because two days after Tuesday is Thursday. This leaves Wednsday, so Abe is born on a Wednesday. Two days before Wednesday is Monday, John's birthday is on a Monday. The only day remaining is Friday, William's birthday is on a Friday, which is also after Abe's as stated.
