@@ -32,26 +32,45 @@ echo "Enter your second number."
 read n2
 #After pressing enter the result is printed to the user.
 	case $ch in
-		1)result=$(( $n1 + $n2 ))
+		1)#Addition
+		result=$(( $n1 + $n2 ))
 		ResultType="Sum"
-		echo ${bold} The sum of $n1 + $n2 is $result
-		echo $normal;;
-		2)result=$(($n1 - $n2))
+		#echo ${bold} The sum of $n1 + $n2 is $result
+		#echo $normal
+		;;
+		2)#Subtraction
+		result=$(( $n1 - $n2 ))
 		ResultType="Difference"
-		echo ${bold} The difference of $n1 - $n2 is $result
-		echo $normal;;
-		3)result=$(( $n1 * $n2 ))
+		#echo ${bold} The difference of $n1 - $n2 is $result
+		#echo $normal
+		;;
+		3)#Multiplication
+		result=$(( $n1 * $n2 ))
 		ResultType="Product"
-		echo ${bold} The product of $n1 \* $n2 is $result
-		echo $normal;;
-		4)result=$(( $n1 / $n2 ))
-		remainder=$(( $n1 % $n2 ))
+		#echo ${bold} The product of $n1 \* $n2 is $result
+		#echo $normal
+		;;
+		4)#Division
+		result=$(( $n1 / $n2 ))
+		remainder=$(($n1 % $n2))
 		ResultType="Quotient"
-		echo ${bold} The quotient of $n1 / $n2 is $result with a remainder of $remainder
-		echo $normal;;
+		remainder="remainder"
+		#echo ${bold} The quotient of $n1 / $n2 is $result with a remainder of $remainder
+		#echo $normal
+		;;
+		
 
 esac
 
+{ if [[ $ResultType="Sum" ]] || [[ $ResultType="Difference" ]] || [[ $ResultType="Product" ]]
+	then
+	echo ${bold} The $ResultType of $n1 and $n2 is $result.
+	echo $normal
+else [[ $ResultType="Quotient" ]] 
+	echo ${bold} The $ResultType of $n1 and $n2 is $result with a remainder of $remainder.
+	echo $normal
+fi
+}
 #User can choose to exit the program or choose to make another calculation.
 echo Would you like to do another calculation?
 echo Yes or No
