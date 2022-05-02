@@ -15,10 +15,12 @@ using System;
 namespace CatsAndAMouse
 {
 
-    class Solution {
+    class Solution 
+    {
 
     // Complete the catAndMouse function below.
-    static string catAndMouse(int x, int y, int z) {
+    static string catAndMouse(int x, int y, int z) 
+    {
 
         int distanceA = Math.Abs (x - z);
         int distanceB = Math.Abs (y -z);
@@ -37,12 +39,14 @@ namespace CatsAndAMouse
         }
     }
 
-    static void Main(string[] args) {
-        TextWriter textWriter = new StreamWriter(("C:\\Users\\leeki\\LeeKiraSmithRevature1\\CatsAndAMouse\\Output.txt"));
+    static void Main(string[] args)
+     {
+        TextWriter textWriter = new StreamWriter(("C:\\Users\\leeki\\LeeKiraSmithRevature1\\CatsAndAMouse\\Output.txt"), true);
 
         int q = Convert.ToInt32(Console.ReadLine());
 
-        for (int qItr = 0; qItr < q; qItr++) {
+        for (int qItr = 0; qItr < q; qItr++) 
+        {
             string[] xyz = Console.ReadLine().Split(' ');
 
             int x = Convert.ToInt32(xyz[0]);
