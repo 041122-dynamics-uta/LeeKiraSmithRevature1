@@ -1,0 +1,66 @@
+#!/bin/bash
+bold=`echo -en "\e[1m"`
+normal=`echo -en "\e[0m"`
+
+
+#Script to welcome user
+
+echo Hi! What\'s your name?
+
+read ch
+
+echo It\'s nice to meet you ${bold}$ch!
+echo -n $normal
+
+#Script presents users with a menu that allows the user to choose between add, subtract, multiply, or divide
+
+sum=0
+a='Yes'
+while [ $a == 'Yes' ]
+	do
+echo What calculation can I help you with today?
+echo "1.Addition"
+echo "2.Subtraction"
+echo "3.Multiplication" 
+echo "4.Division"
+
+echo "Enter your choice"
+read ch
+echo "Enter your ${bold}first$normal number."
+read n1
+echo "Enter your ${bold}second$normal number."
+read n2
+#After pressing enter the result is printed to the user.
+	case $ch in
+		1)result=$(( $n1 + $n2 ))
+		ResultType="Sum"
+		echo ${bold} The sum of $n1 + $n2 is $result.
+		echo $normal;;
+		2)result=$(($n1 - $n2))
+		ResultType="Difference"
+		echo ${bold} The difference of $n1 - $n2 is $result.
+		echo $normal;;
+		3)result=$(( $n1 * $n2 ))
+		ResultType="Product"
+		echo ${bold} The product of $n1 \* $n2 is $result.
+		echo $normal;;
+		4)result=$(( $n1 / $n2 ))
+		remainder=$(( $n1 % $n2 ))
+		ResultType="Quotient"
+		echo ${bold} The quotient of $n1 / $n2 is $result with a remainder of $remainder.
+		echo $normal;;
+
+esac
+
+#User can choose to exit the program or choose to make another calculation.
+echo Would you like to do another calculation?
+echo Yes or No
+read ans
+
+if [ $ans != 'Yes' ]
+then
+	echo ${bold}"Good Bye!"
+	echo $normal
+	exit
+fi
+done
