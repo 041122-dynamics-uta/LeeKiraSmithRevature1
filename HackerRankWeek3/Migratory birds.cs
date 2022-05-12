@@ -1,4 +1,4 @@
-﻿using System.CodeDom.Compiler;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Collections;
 using System.ComponentModel;
@@ -12,10 +12,7 @@ using System.Text.RegularExpressions;
 using System.Text;
 using System;
 
-namespace UpdatedMigratoryBirds
-{
-
-    class Result
+class Result
 {
 
     /*
@@ -24,7 +21,7 @@ namespace UpdatedMigratoryBirds
      * The function is expected to return an INTEGER.
      * The function accepts INTEGER_ARRAY arr as parameter.
      
-     1. Seprate the data they already have a list of arrays . 
+     1. Seprate the data they already have a list of arrarys . 
      What do I need to collect?
      - determine the id of the most frequently sighted type (count list)
      
@@ -42,7 +39,7 @@ namespace UpdatedMigratoryBirds
 What do I need to collect?
 - determine the id of the most frequently sighted type 
 */
-/*These are my variable instanciation */
+/*These are my variable instanciations */
         int frequentBird = arr[0];
         int currentType = arr[0];
         int topCount = 1;
@@ -75,11 +72,12 @@ Return the smallest of their ids. (sort list) */
     }
     
 }
+
 class Solution
 {
     public static void Main(string[] args)
     {
-        TextWriter textWriter = new StreamWriter(("C:\\Users\\leeki\\LeeKiraSmithRevature1\\Migratory\\UpdatedMigratoryBirds\\Output.txt"));
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
         int arrCount = Convert.ToInt32(Console.ReadLine().Trim());
 
@@ -93,4 +91,3 @@ class Solution
         textWriter.Close();
     }
 }
-}   
