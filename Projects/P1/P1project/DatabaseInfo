@@ -1,0 +1,62 @@
+--CUSTOMER INSERTS (5)
+SET IDENTITY_INSERT [dbo].[Store] ON
+INSERT INTO [Customer] ([FirstName], [LastName], [Address], [City], [State], [Country], [PostalCode], [Phone], [Email], [Password]) 
+VALUES ('Kenya', 'Moore', '111 Wood DRV', 'Atlanta', 'GA', 'USA' '30301', '+1 (404) 893-7878', 'kenyamoorehaircare@gmail.com', 'missusa93');
+INSERT INTO [Customer] ([FirstName], [LastName], [Address], [City], [State], [Country], [PostalCode], [Phone], [Email], [Password]) 
+VALUES ('Domonic', 'Raymond', '123 West Ave.', 'Houston', 'TX', 'USA', '77001', '+1 (281) 798-3232', 'd.ray@ymail.com', '#1Dline');
+INSERT INTO [Customer] ([FirstName], [LastName], [Address], [City], [State], [Country], [PostalCode], [Phone], [Email], [Password]) 
+VALUES ('Asia', 'Gamma', '234 South Street', 'Tampa', 'FL', 'USA', '33601', '+1 (813) 222-5545', 'AG234@gmail.com', 'bUcarrooPanther');
+INSERT INTO [Customer] ([FirstName], [LastName], [Address], [City], [State], [Country], [PostalCode], [Phone], [Email], [Password]) 
+VALUES ('Christy', 'Docker', '5656 West Elm St.', 'Los Angeles', 'CA', 'USA', '90001', '+1 (213) 897-1234', 'cyDocker@aol.net', 'goRAMS1234');
+INSERT INTO [Customer] ([FirstName], [LastName], [Address], [City], [State], [Country], [PostalCode], [Phone], [Email], [Password]) 
+VALUES ('Jillian', 'Johnson', '789 Foster Street', 'Atlanta', 'GA', 'USA', '30331', '+1 (470) 6167-5489', 'JJohnson@gmail.com', 'Fittness247');
+
+
+--STORE INSERTS (3)
+INSERT INTO Store ([StoreName], [Address], [City], [State], [PostalCode], [Phone], [Email]) 
+VALUES('CookieCrumbleATL','888 Cookie Avenue', 'Atlanta', 'Georgia', '30303', '+1 (404) 123-8888', 'CookieCrumbleATL@Gmail.com');
+INSERT INTO Store ([StoreName] [Address], [City], [State], [PostalCode], [Phone], [Email]) 
+VALUES('CookieCrumbleLA','1010 Cookie Ln', 'Los Angeles', 'California', '90001', '+1 (213) 456-8888', 'CookieCrumbleLA@Gmail.com');
+INSERT INTO Store ([StoreName] [Address], [City], [State], [PostalCode], [Phone], [Email]) 
+VALUES('CookieCrumbleHTX','1111 Cookie Street', 'Houston', 'Texas', '77001', '+1 (281)789-8888', 'CookieCrumbleHTX@Gmail.com');
+
+--PRODUCT INSERTS (5 into each store)
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(12, 'Chocolate Chip','Soft, buttery, cakey vanilla-scented dough flecked with melting milk chocolate chips', 10, 12);
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(12, 'Peanut Butter','Crunchy, melt-in-your-mouth, sweet, and savory chunky roasted peanut butter cookie', 10, 12);
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(12, 'Sugar Cookie','Soft and sweet - good enough to eat', 10, 12);
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(12, 'Oatmeal Cookie','Crispy on the outside with a center loaded with a blend of spices', 10, 12);
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(12, 'Shortbread','Buttery, crumbly, and lightly sweet', 10, 12);
+
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(14, 'Chocolate Chip','Soft, buttery, cakey vanilla-scented dough flecked with melting milk chocolate chips', 10, 12);
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(14, 'Peanut Butter','Crunchy, melt-in-your-mouth, sweet, and savory chunky roasted peanut butter cookie', 10, 12);
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(14, 'Sugar Cookie','Soft and sweet - good enough to eat', 10, 24);
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(14, 'Oatmeal Cookie','Crispy on the outside with a center loaded with a blend of spices', 10, 12);
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(14, 'Shortbread','Buttery, crumbly, and lightly sweet', 10, 24);
+
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(16, 'Chocolate Chip','Soft, buttery, cakey vanilla-scented dough flecked with melting milk chocolate chips', 10, 12);
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(16, 'Peanut Butter','Crunchy, melt-in-your-mouth, sweet, and savory chunky roasted peanut butter cookie', 10, 24);
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(16, 'Sugar Cookie','Soft and sweet - good enough to eat', 10, 36);
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(16, 'Oatmeal Cookie','Crispy on the outside with a center loaded with a blend of spices', 10, 12);
+INSERT INTO Product ([StoreID], [Name], [Description], [Price], [Quantity]) 
+VALUES(16, 'Shortbread','Buttery, crumbly, and lightly sweet', 10, 36);
+
+
+
+--Order Details INSERTS (5 clients so add orders accordingly)
+INSERT INTO Order_Details ([CustomerId], [ProductId], [OrderDate], [Billing[Address]], [Billing[City]], [Billing[Country]], [Billing[PostalCode]] [Total]) 
+VALUES (2, 10, '2022/10/5', '111 Wood DRV', 'Atlanta', 'GA', 'USA', '30301', 20.20);
+

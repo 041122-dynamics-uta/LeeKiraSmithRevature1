@@ -1,0 +1,126 @@
+--CREATE DATABASE CookieCrumble;
+
+CREATE TABLE Customer(
+[CustomerId] int IDENTITY (2, 2) Primary Key,
+[FirstName] nvarchar(30) not null,
+[LastName] nvarchar (30) not null,
+[Address] nvarchar (70),
+[City] nvarchar (30),
+[State] nvarchar (30),
+[Country] nvarchar (30),
+[PostalCode] nvarchar (10),
+[Phone] nvarchar (20),
+[Email] nvarchar (60) not null,
+[Password] nvarchar (30) not null,
+);
+
+CREATE TABLE Product (
+[ProductId] int IDENTITY (10,5) Primary Key,
+[StoreId] int not null,
+[Name] nvarchar (100) not null,
+[Description] nvarchar (200),
+[Price] int not null,
+[Quantity] int not null,
+);
+
+CREATE TABLE Store (
+[StoreId] int IDENTITY(12,2) Primary Key,
+[Address] nvarchar(70),
+[City] nvarchar(30),
+[State] nvarchar(30),
+[PostalCode] nvarchar(10),
+[Phone] nvarchar(20),
+[Email] nvarchar(60) not null,
+);
+ALTER TABLE [dbo].[Store]
+ADD StoreName nvarchar(40) not null
+
+--Procedure to get customer & order?
+--Junction table for store & order?
+
+--Inventory Junction table from store & product //many to many relationship
+CREATE TABLE Inventory (
+[InventoryId] int IDENTITY(10,10) Primary Key,
+[InventoryNumber] int not null,
+[ProductId] int Foreign key references Product(ProductId),
+[StoreId] int Foreign key references Store(StoreId),
+DateCreated DATETIME not null default(Getdate())
+);
+
+CREATE TABLE Orders (
+[OrderId] int INDENTITY (2,2) Primary Key,
+[CustomerId] int Foreign key references Customer(CustomerId), 
+[ProductId] int Foreign key references Product(ProductId),
+[OrderDate] DATETIME not null,
+[Total] int not null,
+);
+
+--Procedures
+--Allow customer to get order history?
+
+ SELECT id, FirstName, LastName
+    FROM customerID
+END
+--join store and product for inventory
+--iNVENTORY JOIN
+SELECT Store.StoreId, Product.ProductId
+FROM Store LEFT JOIN Product
+ON  
+
+SELECT Orders.OrderID, Customers.CustomerId, Product.ProductId
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+
+/* Add Billinging info into orders or create an order history table with billing info in it
+Add inventory info into table
+
+/*CREATE TABLE Customer(
+[CustomerId] int IDENTITY (2, 2) Primary Key,
+[FirstName] nvarchar(30) not null,
+[LastName] nvarchar (30) not null,
+[Address] nvarchar (70),
+[City] nvarchar (30),
+[State] nvarchar (30),
+[Country] nvarchar (30),
+[PostalCode] nvarchar (10),
+[Phone] nvarchar (20),
+[Email] nvarchar (60) not null,
+[Password] nvarchar (30) not null,
+);
+
+CREATE TABLE Product (
+[ProductId] int IDENTITY (10,5) Primary Key,
+[StoreId] int not null,
+[Name] nvarchar (100) not null,
+[Description] nvarchar (200),
+[Price] int not null,
+[Quantity] int not null,
+);
+ALTER TABLE [dbo].[Product]
+add foreign key (StoreId) references Store(StoreID);
+
+CREATE TABLE Store (
+[StoreId] int IDENTITY(12,2) Primary Key,
+[Address] nvarchar(70),
+[City] nvarchar(30),
+[State] nvarchar(30),
+[PostalCode] nvarchar(10),
+[Phone] nvarchar(20),
+[Email] nvarchar(60) not null,
+);
+
+CREATE TABLE Inventory (
+[InventoryId] int IDENTITY(10,10) Primary Key,
+[InventoryNumber] int not null,
+[ProductId] int Foreign key references Product(ProductId),
+[StoreId] int Foreign key references Store(StoreId),
+DateCreated DATETIME not null default(Getdate())
+);
+
+CREATE TABLE Orders (
+[OrderId] int IDENTITY (2,2) Primary Key,
+[CustomerId] int Foreign key references Customer(CustomerId), 
+[ProductId] int Foreign key references Product(ProductId),
+[OrderDate] DATETIME not null,
+[Total] int not null,
+);
