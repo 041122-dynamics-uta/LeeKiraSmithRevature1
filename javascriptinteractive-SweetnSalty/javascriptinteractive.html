@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hiddenFirstStep {
+            display: none;    
+        }
+        #hiddenSecondStep {
+            display: none;
+        }
+        #calculationButton {
+            display: none;
+        }
+    </style>
+    <script src="javascriptinteractive.js"></script> 
+</head>
+<body>
+    <h1>Sweet, Salty, SweetNSalty</h1>
+    <h3>Welcome to SweetNSalty! Where numbers are sweet, salty, SweetNSalty or none of the above.</h3>
+    <h2>Game Rules</h2>
+    <p>
+        Step 1: The user enters the number to start with. Then they click the Enter button.  
+        <br>
+        Step 2: The user enters the number to finish with. Then they click the Enter button. 
+        <br>
+        Step 3: Print Sweet, Salty, Sweet'nSalty, and the numbers to the screen as the user instructed. 
+        <br>
+        Step 4: Print the total number of Sweet, Salty, and Sweet’nSalty after printing the numbers and words. 
+        <br>
+        Step 5: After all the numbers have been printed, present a button allowing the user to delete everything and restart. 
+        <br>
+    </p>
+   <button type="button" onclick="revealMessage()">Start!</button>
+   <br>
+   <br>
+   <div >
+        <form id="hiddenFirstStep">   
+            <label>Enter your first number:</p>  
+                <input id="firstNumber" type="number"><br>
+            </label>
+                <button type="button" id="btn1" onclick="revealMessage2()">Enter</button>
+        </form>
+   </div> 
+   <br>
+   <div>
+        <form id="hiddenSecondStep">
+            <label>Enter your second number:</p>  
+                <input type="number"><br>
+            </label>
+                <button type="button" onclick="revealMessage3()">Enter</button>
+        </form>
+    </div> 
+    <br>
+    <div id="calculationButton">
+        
+        <button type="button" onclick="revealMessage3()">Calculate</button>
+        
+    </div> 
+</body>
+
+</html>
