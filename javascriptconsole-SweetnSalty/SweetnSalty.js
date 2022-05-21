@@ -16,7 +16,6 @@ let Swt = 0;
 let Sty = 0;
 //how many "Sweet’nSalty".  
 let SwtNSty = 0; 
-let row = 0;
 //need a empty string to concat 
 let strC = " ";
 
@@ -30,7 +29,6 @@ for (var i = 1; i <= 1000; i++)
         {
             strC += " SweetNSalty ";
             SwtNSty++;
-            //console.log(arr_1.concat(arrayLength));
             
             
         }
