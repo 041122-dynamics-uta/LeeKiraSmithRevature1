@@ -1,0 +1,20 @@
+Match All
+Use MatchAll to extract all text strings that match. You can also extract sub-matches to parse complex strings.
+MatchAll returns a table of records for every match found. 
+MatchAll returns an empty table if no match is found
+
+Syntax:
+MatchAll( Text, Pattern [, Options ] )
+•	Text – Required. The text string to match.
+•	Pattern – Required. The pattern to match as a text string. Concatenate predefined patterns that the Match enum defines, or provide a regular expression. Pattern must be a constant formula without any variables, data sources, or other dynamic references that change as the app runs.
+•	Options – Optional. A text-string combination of MatchOptions enum values. By default, MatchOptions.Contains is used.
+
+MatchAll(2-3arguments)
+
+Use the OnSelect property for example
+Example: 
+OnSelect = MatchAll(TextSearchBox1.Text, MultipleLetters)
+This OnSelect targets  the search box text  on the app to display all matches of text
+For some reason it only matches the Title in database unsure why. 
+Can use Items property to MatchAll as well
+(Can also be applied to button) 
