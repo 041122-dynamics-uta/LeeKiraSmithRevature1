@@ -14,6 +14,7 @@ namespace P1project
         {
             //Store s = new Store();
             CustomerTable newCustomer = new CustomerTable();
+            ProductClass newProductClass = new ProductClass();
             P1RepoClass prc = new P1RepoClass ();
             P1BusinessClass pbc = new P1BusinessClass(prc);
             
@@ -112,16 +113,128 @@ namespace P1project
 
            }
        //Store Location
+       //View a store location
+        bool SloopContinue = false;// this is to tell the user to correctly enter the correct value format
+        
+            while (SloopContinue == false)
+            {
+       // Console.WriteLine("What would you like to do today?");
+       Console.WriteLine("\n View a list of stores -- type 1\n View a list of products -- type 2\n View Order -- type 3\n Exit -- type 4");
+       //Console.WriteLine(" 1 Yes \n 2 No \n 3 to Exit Program");
+       Console.WriteLine("\n");
+                int StoreOption = Convert.ToInt32(Console.ReadLine());
+                if ( StoreOption < 4) //used equal sign to allow exit with choice 4 - took it out. The range was throwing off menu options. 
+                {
+                    switch (StoreOption)
+                    {
+                        case 1:
+                          List<StoreClass> store = pbc.StoreClassList();
+                         foreach (StoreClass sc in store)
+                        
+                        Console.WriteLine($"Store {sc.StoreId} is {sc.StoreName} located in {sc.City}");
+                         
+                                 //SloopContinue = true;
+                                  
+                                  
+                        break;
+
+                        case 2:
+                        //Add Products
+                        Console.WriteLine($"Products available -----");
+                        SloopContinue = true;
+                        break;
+
+                        case 3:
+                        // Add order history
+                        Console.WriteLine($"Order history ------");
+                        SloopContinue = true;
+                        break;
+
+
+                        case 4:
+                          SloopContinue = true;
+                        Console.WriteLine("Bye!");
+                        break;
+
+                        default:
+                        Console.WriteLine("That is not a valid option. Please try again.");
+                        break;
+                    }
+                }
+                }
+            
+                 //Choose a store
+                 List<StoreClass> stores = pbc.StoreClassList();
+                 
+                 int Schoice = StoreChoice();
+                 //int Schoice = Convert.ToInt32(Console.ReadLine());
+                 while (Schoice != 0 )
+                 {
+                 Console.WriteLine ($"You selected store location" + " " + Schoice );
+                 
+                 switch ( Schoice)
+                 {
+                     case 12:
+                     
+                     
+                     Console.WriteLine($"CookieCrumbleAtlanta");
+                     List<ProductClass> products = pbc.ProductClassList();
+                     //string productR = Convert.ToString(Console.ReadLine());
+                     //Keep getting an error about unable to cast object of type "System. Int32 to type 'System.String'
+                       foreach (ProductClass atl in products){
+                        
+                        Console.WriteLine($"{atl.Name} -- {atl.Description} --- {atl.Price}");
+                       // int item = Convert.ToInt32(Console.ReadLine());
+                       }
+                       
+                       
+                       
+                     //Console.WriteLine($"The products availabe are  {atl.Name}, {atl.Description}, {atl.Price}");
+                     //string 
+                     //View inventory
+                     //Select inventory
+                     //Add to cart
+
+                     break;
+                     
+
+                     case 14:
+                     Console.WriteLine($"CookieCrumble Los Angeles");
+
+                     break;
+
+                     case 16:
+                     Console.WriteLine($"CookieCrumble Houston");
+                     
+                     break;
+
+                     default:
+                     break;
+                 }
+        
+
+                Schoice = StoreChoice();
+    
+                 }     
+             
+               
+                        
+            
+
+       
+       
+       
+       
+       
+       
       /*  CookieCrumbleLocation a = new CookieCrumbleLocation();
         //int loc = CookieCrumbleLocation();
         bool CookLocLoop = true;
-
         while ( CookLocLoop == false )
         
         {
             int CookLocLoop = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("You chose:");
-
             switch (CookLocLoop)
             {
                 case 1:
@@ -133,7 +246,6 @@ namespace P1project
                     Console.WriteLine("CookieCrumble Houston");
                     CookLocLoop = true;
                     break;
-
                 case 3:
                     Console.WriteLine("CookieCrumble Los Angeles");
                     CookLocLoop = true;
@@ -143,7 +255,7 @@ namespace P1project
         }
             */
 
-            Console.WriteLine("What would you like to do today?");
+          //  Console.WriteLine("What would you like to do today?");
 
       //Store 
         Store s = new Store();
@@ -205,7 +317,7 @@ namespace P1project
 
         }
         //was private
-      private static void printShoppingCart(Store s)
+       static void printShoppingCart(Store s)
         {
             Console.WriteLine("Cookies you have selected to buy");
              for(int i = 0; i < s.ShoppingList.Count; i++)
@@ -214,7 +326,7 @@ namespace P1project
                 Console.WriteLine("Cookie #: " + i + " " + s.ShoppingList[i]);
             }   
         }
-        public static void printInventory(Store s)
+        static void printInventory(Store s)
         {
             for(int i = 0; i < s.CookieList.Count; i++)
             {
@@ -222,8 +334,19 @@ namespace P1project
                 Console.WriteLine("Cookie #: " + i + " " + s.CookieList[i]);
             }
         }
+        static int StoreChoice()
+        {
+            int Schoice = 0;
+           // Console.WriteLine("\n Which location would you like to shop at?");
+            //Console.WriteLine("\n");
+            Console.WriteLine("\n For \n CookieCrumble Atlanta - type (12). \n CookieCrumble Los Angeles - type (14) \n CookieCrumble Houston - type (16) \n To Exit - type (0)");
+
+            //int Schoice = Convert.ToInt32(Console.ReadLine());
+            Schoice = int.Parse( Console.ReadLine());
+            return Schoice;
+        }
         //was static public int
-        static public int menuAction()
+        static int menuAction()
         {
             int choice = 0;
             Console.WriteLine("\n To exit - type (0). \n Customize A Cookie - type (1). \n Add Cookie to your cart - type (2). \n To checkout - type (3).");
@@ -231,31 +354,10 @@ namespace P1project
             choice = int.Parse( Console.ReadLine());
             return choice;        
         }   
+    }
+    }
+//}
 
-/*
-            Cookie c = new Cookie();
-            Cookie d = new Cookie ("Sugar Cookie", 10.00m);
-            Cookie e = new Cookie ("Choclate Chip", 10.00m);
-            Cookie f = new Cookie ("Peanut Butter", 10.00m);
-            Cookie g = new Cookie ("Oatmeal Cookie", 10.00m);
-            Cookie h = new Cookie ("Shortbread Cookie", 10.00m);
-            Console.WriteLine("Cookie choice:" + " " + d.Flavor + " for " + d.Price);
-            Console.WriteLine("Cookie choice:" + " " + f.Flavor + " for " + f.Price);
-            
-            Store s = new Store();
-            s.ShoppingList.Add(d);
-            s.ShoppingList.Add(f);
-            decimal total = s.Checkout ();
-            Console.WriteLine("Your CookieCrumble total is " + total);
-          */  
-
-      
-      
-    
-      
-      } 
-
-    }   
 
 
       

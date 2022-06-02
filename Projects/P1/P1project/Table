@@ -12,6 +12,7 @@ CREATE TABLE Customer(
 [Phone] nvarchar (20),
 [Email] nvarchar (60) not null,
 [Password] nvarchar (30) not null,
+[Username] nvarchar (60) not null, 
 );
 
 CREATE TABLE Product (

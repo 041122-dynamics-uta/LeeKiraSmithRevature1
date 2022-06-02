@@ -7,12 +7,33 @@ namespace P1Business;
 
 public class P1BusinessClass
 {
-    //inject the dependency into the class
+       
+   //inject the dependency into the class
     public P1RepoClass _repo {get; set;}
     public P1BusinessClass(P1RepoClass r)
     {
         this. _repo = r;
     }
+
+    public List<StoreClass> StoreClassList()
+    {
+        List<StoreClass> sc = _repo.StoreClassList();
+        return sc;
+    }
+
+
+    public List<ProductClass> ProductClassList()
+    {
+        List<ProductClass> atl = _repo.ProductClassList();
+        return atl;
+    }
+       // List<ProductClass> hou = _repo.ProductClassList();
+        //return hou;
+
+        //List<ProductClass> la = _repo.ProductClassList();
+        //return la;
+    
+
           public List<CustomerTable> CustomerList()
         {
         List<CustomerTable> ml = _repo.CustomerList();
@@ -33,8 +54,15 @@ public class P1BusinessClass
         return m;
     }
 
+    // public ProductClass newProductClass(string Name, string Description, int Price)
+    //{
+      //  ProductClass atl = _repo.showProductClass(Name, Description, Price);
+        //return atl;
+    //}
+
 }
 
+   
   
         
 
@@ -76,7 +104,7 @@ public class P1BusinessClass
         } 
     }
 
-   /* public class Customer {
+    public class Customer {
     // public NewCustomer(string FirstName, string LastName, string Email, string Password)
     //{
         //pass new data to repo layer to insert into the Db.
@@ -84,7 +112,7 @@ public class P1BusinessClass
       //  Customer m = P1RepoClass.NewCustomer(FirstName, LastName, Email, Password);
         //return m;
     }
-    }*/
+
 
                     
                 
