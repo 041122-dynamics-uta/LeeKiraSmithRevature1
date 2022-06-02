@@ -4,16 +4,18 @@ using P1Models;
 
 
 namespace P1Repository;
-
 public class P1RepoClass
 {
     public P1MapperClass _mapper {get; set;}
     string connectionString = $"Server=tcp:leekirasmithserver.database.windows.net,1433;Initial Catalog=CookieCrumble;Persist Security Info=False;User ID=LeeKiraSmithDB;Password=Munchkin2012;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
 
+
     public P1RepoClass()
     {
     this._mapper = new P1MapperClass ();
     }
+
+
 
     public List <CustomerTable> CustomerList()
     {
@@ -66,7 +68,64 @@ public class P1RepoClass
             return new CustomerTable();
         }
     }
-}
+
+     public List<StoreClass> StoreClassList()
+    {
+        string myQuery3 = "SELECT * FROM Store;";
+//using block creates SqlConnection
+//SqlConnection is the object that communicates with the Db.
+        using (SqlConnection query3 = new SqlConnection(connectionString))
+        {
+            //The SqlCommand object uses the query text along with the object to open a connection and send the query.
+            SqlCommand command = new SqlCommand (myQuery3, query3);
+            command.Connection.Open();
+            SqlDataReader results = command.ExecuteReader();
+//query the Repo Database for the list of stores
+//use the mapper to transfer the values in to Stores objects in a List<StoreClass>
+            List<StoreClass> sc = new List<StoreClass>();
+            while (results.Read())
+            {
+                sc.Add(this._mapper.DboToStore(results)); // the row send in to the reader to be mapped
+            }
+            query3.Close();
+            return sc;
+        }
+    }
+
+    
+     public List<ProductClass> ProductClassList()
+    {
+        string myQuery4 = "SELECT * FROM Product;";
+//using block creates SqlConnection
+//SqlConnection is the object that communicates with the Db.
+        using (SqlConnection query4 = new SqlConnection(connectionString))
+        {
+            //The SqlCommand object uses the query text along with the object to open a connection and send the query.
+            SqlCommand command = new SqlCommand (myQuery4, query4);
+            command.Connection.Open();
+            SqlDataReader results = command.ExecuteReader();
+            
+//query the Repo Database for the list of stores
+//use the mapper to transfer the values in to Stores objects in a List<StoreClass>
+            List<ProductClass> atl = new List<ProductClass>();
+            while (results.Read())
+            {
+                atl.Add(this._mapper.DboToProduct(results)); // the row send in to the reader to be mapped
+            }
+            query4.Close();
+            return atl;
+        }
+    }
+
+    
+            
+
+
+        }
+    
+
+
+  //List available Stores
 
 
            /* List<CustomerTable> cl = new List<CustomerTable>();

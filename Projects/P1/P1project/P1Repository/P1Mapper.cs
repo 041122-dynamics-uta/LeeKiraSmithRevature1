@@ -16,6 +16,33 @@ namespace P1Repository
                 Password = (string)reader[4],
             };
             return m;
-        }     
+        }    
+
+        //method to transfer data from store list
+        public StoreClass DboToStore(SqlDataReader reader)
+        {
+            StoreClass s = new StoreClass
+            {
+                StoreId = (int)reader[0],
+                StoreName = (string)reader[1],
+                City = (string)reader[2],
+                //Inventory = (int)reader[3],
+            };
+            return s;
+        }
+    
+        public ProductClass DboToProduct(SqlDataReader reader)
+        {
+            ProductClass atl = new ProductClass
+            {
+                ProductId = (int)reader[0],
+                Name = (string)reader[1],
+                Description = (string)reader[2],
+                Price = (int)reader[3],
+            };
+            return atl;
+        }
     }
+
 }
+

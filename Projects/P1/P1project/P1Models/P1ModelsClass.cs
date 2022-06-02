@@ -2,46 +2,47 @@
 using System.Collections.Generic;
 namespace P1Models;
 
+
     public class CustomerTable
     {
         //Customer Table
         public int CustomerId {get; set;} = 0;
-        public string? FirstName {get; set;}
-        public string? LastName {get; set;}
+        public string FirstName {get; set;} = "";
+        public string LastName {get; set;} = "";
         public string? Address {get; set;} 
         public string? City {get; set;}
         public string? State {get; set;}
         public string? Country{get; set;}
         public int PostalCode {get; set;} =0;
         public int Phone {get; set;} = 0;
-        public string? Email {get; set;}
-        public string? Password {get; set;}
+        public string Email {get; set;} = "";
+        public string Password {get; set;} = "";
 
-        public  CustomerTable ()
-        {
-            FirstName = "nothing yet";
-            LastName = "nothing yet";
-            Email = "nothing yet";
-            Password = "nothing yet";
-        }
+      //  public  CustomerTable ()
+       // {
+         //   FirstName = "nothing yet";
+           // LastName = "nothing yet";
+            //Email = "nothing yet";
+            //Password = "nothing yet";
+        //}
 
-        public CustomerTable (string a, string b, string c, string d)
-        {
-            FirstName = a;
-            LastName = b;
-            Email = c;
-            Password = d;
-        }
+        //public CustomerTable (string a, string b, string c, string d)
+        //{
+          //  FirstName = a;
+            //LastName = b;
+            //Email = c;
+            //Password = d;
+        //}
     }
     public class ProductClass
     {
         // --- PRODUCT TABLE 
         public int ProductId {get; set;}
         public int StoreId {get; set;}
-        public string? Name {get; set;}
-        public string? Description {get; set;}
-        public int Price {get; set;}
-        //If I set int to decimal will i have to cast it?
+        public string Name {get; set;} = " ";
+        public string Description {get; set;} = " ";
+        public int Price {get; set;} = 0;
+        
         public int Quantity {get; set;}
         public DateTime DateCreated {get; set;} = DateTime.Now; 
 
@@ -66,7 +67,7 @@ namespace P1Models;
             Price = c;
         }
         
-        override public string ToString() //all methods are tostring so you have to override it to avoid the error message 
+        override public string ToString() //all methods are to string so you have to override it to avoid the error message 
         {
             return "Flavor: " + Flavor + " Description: " + Description + " Price: $" + Price;
         }
@@ -102,9 +103,16 @@ namespace P1Models;
         public string? Email {get; set;}
         public string? StoreName {get; set;}
 
-        //public string StoreLocation {get; set;} maybe use this instead of having to call on all these objects just for the store location.(address,city,postalcode)
+        //public string StoreLocation {get; set;} maybe use this instead of having to call on all these objects just for the store location.(address,city,postal code)
     }
 
+    public class Order
+    {
+        public Guid OrderId {get; set;} = new Guid ();
+        public Dictionary<ProductClass, int> Products {get; set;}
+        public CustomerTable CustomerTable {get; set;}
+        public StoreClass StoreClass {get; set;}
+    }
 
     public class Inventory
     {
@@ -116,6 +124,12 @@ namespace P1Models;
         public DateTime DateCreated {get; set;} = DateTime.Now;
 
     // public string StoreInventory {get; set;}
+    }
+
+    public class Inventory2
+    {
+        public Dictionary<ProductClass, int> Products {get; set;} = new Dictionary<ProductClass, int>();
+        public StoreClass Store {get; set;} = new StoreClass();
     }
     
 
